@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./header.css";
 export const Header = () => {
-  const [task, setTask] = useState([
+  const taskmain = [
     { id: 1234, name: "mandeep singh", done: true },
     { id: 1235, name: "lololks", done: false },
     { id: 1236, name: "jdscnsiudciusd", done: true },
@@ -19,10 +19,14 @@ export const Header = () => {
     { id: 1248, name: "my eleventh task", done: false },
     { id: 1249, name: "my twelfth task", done: true },
     { id: 1250, name: "my twelfth task", done: true },
-  ]);
+  ];
+  const [task, setTask] = useState(taskmain);
   function del(id) {
     const newTask = task.filter((t) => t.id !== id);
     setTask(newTask);
+  }
+  function reset() {
+    setTask(taskmain);
   }
   const [show, setshow] = useState(true);
   return (
@@ -31,6 +35,9 @@ export const Header = () => {
         <h1 className="task">tasks </h1>
         <button className="button-del" onClick={() => setshow(!show)}>
           toggle
+        </button>
+        <button className="button-del" onClick={() => reset()}>
+          reset
         </button>
       </div>
 
