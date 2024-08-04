@@ -2,10 +2,6 @@ import { useState } from "react";
 import "./header.css";
 export const Header = () => {
   const taskmain = [
-    { id: 1234, name: "mandeep singh", done: true },
-    { id: 1235, name: "lololks", done: false },
-    { id: 1236, name: "jdscnsiudciusd", done: true },
-    { id: 1237, name: "hello world", done: false },
     { id: 1238, name: "my first task", done: false },
     { id: 1239, name: "my second task", done: true },
     { id: 1240, name: "my third task", done: false },
@@ -17,8 +13,10 @@ export const Header = () => {
     { id: 1246, name: "my ninth task", done: false },
     { id: 1247, name: "my tenth task", done: true },
     { id: 1248, name: "my eleventh task", done: false },
-    { id: 1249, name: "my twelfth task", done: true },
-    { id: 1250, name: "my twelfth task", done: true },
+    { id: 1249, name: "my twelfth task", done: false },
+    { id: 1250, name: "my thirteenth task", done: true },
+    { id: 1251, name: "my fourteenth task", done: false },
+    { id: 1252, name: "my fifteenth task", done: true },
   ];
   const [task, setTask] = useState(taskmain);
   function del(id) {
