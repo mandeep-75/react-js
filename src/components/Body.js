@@ -1,6 +1,7 @@
 import { useState } from "react";
-import "./header.css";
-export const Header = () => {
+import "./Body.css";
+import { Taskcard } from "./Taskcard.js";
+export const Body = () => {
   const taskmain = [
     { id: 1238, name: "my first task", done: false },
     { id: 1239, name: "my second task", done: true },
@@ -40,20 +41,7 @@ export const Header = () => {
       </div>
 
       <ul>
-        {show &&
-          task.map((tasks) => (
-            <li className="list" key={tasks.id}>
-              <span>
-                {tasks.name}-{tasks.id}
-              </span>
-              <button
-                className={tasks.done ? "icom" : "com"}
-                onClick={() => del(tasks.id)}
-              >
-                remove
-              </button>
-            </li>
-          ))}
+        {show && task.map((tasks) => <Taskcard task={tasks} delwe={del} />)}
       </ul>
     </div>
   );
