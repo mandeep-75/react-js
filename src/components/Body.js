@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./Body.css";
+import "./Body,taskcard.css";
 import { Taskcard } from "./Taskcard.js";
 export const Body = () => {
   const taskmain = [

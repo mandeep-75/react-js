@@ -1,4 +1,4 @@
-import "./Body.css";
+import "./Body,taskcard.css";
 export function Taskcard({ task, delwe }) {
   return (
     <div>
