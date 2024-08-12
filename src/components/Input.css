@@ -1,8 +1,13 @@
 .inputfe{
+    margin-left: 20%;
+    margin-bottom: 20px;
+    margin-top: 20px;
    display: flex;
    width: 60%;
    justify-content: space-between;
+   align-items: center;
 }
-.ko{
-    align-items: center;
+.inputfe button {
+    color: rgb(1, 1, 1);
+    background-color: rgb(52, 219, 1);
 }
