@@ -1,0 +1,8 @@
+.inputfe{
+   display: flex;
+   width: 60%;
+   justify-content: space-between;
+}
+.ko{
+    align-items: center;
+}

@@ -7,7 +7,7 @@ export function Taskcard({ task, delwe }) {
           {task.name}-{task.id}
         </span>
         <button
-          className={task.done ? "icom" : "com"}
+          className={task.done ? "com" : "icom"}
           onClick={() => delwe(task.id)}
         >
           remove

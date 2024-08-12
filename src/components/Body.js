@@ -1,31 +1,15 @@
 import { useState } from "react";
 import "./Body,taskcard.css";
 import { Taskcard } from "./Taskcard.js";
-export const Body = () => {
-  const taskmain = [
-    { id: 1238, name: "my first task", done: false },
-    { id: 1239, name: "my second task", done: true },
-    { id: 1240, name: "my third task", done: false },
-    { id: 1241, name: "my fourth task", done: true },
-    { id: 1242, name: "my fifth task", done: false },
-    { id: 1243, name: "my sixth task", done: true },
-    { id: 1244, name: "my seventh task", done: false },
-    { id: 1245, name: "my eighth task", done: true },
-    { id: 1246, name: "my ninth task", done: false },
-    { id: 1247, name: "my tenth task", done: true },
-    { id: 1248, name: "my eleventh task", done: false },
-    { id: 1249, name: "my twelfth task", done: false },
-    { id: 1250, name: "my thirteenth task", done: true },
-    { id: 1251, name: "my fourteenth task", done: false },
-    { id: 1252, name: "my fifteenth task", done: true },
-  ];
-  const [task, setTask] = useState(taskmain);
+export const Body = ({ tasks, settasks }) => {
+  const [taskscp] =useState(tasks);
+
   function del(id) {
-    const newTask = task.filter((t) => t.id !== id);
-    setTask(newTask);
+    const newTask = tasks.filter((t) => t.id !== id);
+    settasks(newTask);
   }
-  function reset() {
-    setTask(taskmain);
+  function reset(tasks) {
+    settasks(taskscp);
   }
   const [show, setshow] = useState(true);
   return (
@@ -35,13 +19,13 @@ export const Body = () => {
         <button className="button-del" onClick={() => setshow(!show)}>
           toggle
         </button>
-        <button className="button-del" onClick={() => reset()}>
+        <button className="button-del" onClick={() => reset(tasks)}>
           reset
         </button>
       </div>
 
       <ul>
-        {show && task.map((tasks) => <Taskcard task={tasks} delwe={del} />)}
+        {show && tasks.map((task) => <Taskcard task={task} delwe={del} />)}
       </ul>
     </div>
   );
