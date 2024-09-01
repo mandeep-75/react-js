@@ -8,6 +8,7 @@ import { useState } from "react";
 export function App() {
   const [tasks, settasks] = useState([]);
   const [doneft, setdoneft] = useState(false);
+  const [taskscp] =useState(tasks);
   return (
     <div>
       <Footer />
@@ -17,6 +18,7 @@ export function App() {
           settasks={settasks}
           setdoneft={setdoneft}
           doneft={doneft}
+          taskscp={taskscp}
         />
         <Body tasks={tasks} settasks={settasks} />
       </main>

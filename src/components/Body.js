@@ -1,8 +1,8 @@
-import { useState } from "react";
+import {  useState } from "react";
 import "./Body,taskcard.css";
 import { Taskcard } from "./Taskcard.js";
 export const Body = ({ tasks, settasks }) => {
-  const [taskscp] =useState(tasks);
+  const [taskscp] = useState(tasks);
 
   function del(id) {
     const newTask = tasks.filter((t) => t.id !== id);
@@ -19,7 +19,12 @@ export const Body = ({ tasks, settasks }) => {
         <button className="button-del" onClick={() => setshow(!show)}>
           toggle
         </button>
-        <button className="button-del" onClick={() => reset(tasks)}>
+        <button
+          className="button-del"
+          onClick={() => {
+            reset(tasks);
+          }}
+        >
           reset
         </button>
       </div>
